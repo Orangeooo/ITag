@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.itag.ui.home.HomeFragment"
+        android:label="主页"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_distance"
+        android:name="com.example.itag.ui.distance.DistanceFragment"
+        android:label="测距"
+        tools:layout="@layout/fragment_distance" />
+
+    <fragment
+        android:id="@+id/nav_follow"
+        android:name="com.example.itag.ui.follow.FollowFragment"
+        android:label="跟随"
+        tools:layout="@layout/fragment_follow" />
+
+    <fragment
+        android:id="@+id/nav_warning"
+        android:name="com.example.itag.ui.warning.WarningFragment"
+        android:label="警报"
+        tools:layout="@layout/fragment_warning" />
+
+
+    <fragment
+        android:id="@+id/nav_location"
+        android:name="com.example.itag.ui.location.LocationFragment"
+        android:label="定位"
+        tools:layout="@layout/fragment_location" />
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.example.itag.ui.history.HistoryFragment"
+        android:label="历史"
+        tools:layout="@layout/fragment_history" />
+</navigation>

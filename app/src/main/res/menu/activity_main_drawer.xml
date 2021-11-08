@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="主页" />
+        <item
+            android:id="@+id/nav_distance"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="测距" />
+        <item
+            android:id="@+id/nav_follow"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="跟随" />
+        <item
+            android:id="@+id/nav_warning"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="警报" />
+
+        <item
+            android:id="@+id/nav_location"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="定位" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="历史" />
+    </group>
+</menu>

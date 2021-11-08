@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.location.LocationFragment">
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="304dp"
+        android:layout_height="86dp"
+        android:ems="10"
+        android:hint="基站0坐标,/分割,整数，cm"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="304dp"
+        android:layout_height="72dp"
+        android:ems="10"
+        android:hint="基站1坐标"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText1" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="304dp"
+        android:layout_height="79dp"
+        android:ems="10"
+        android:hint="基站2坐标"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="231dp"
+        android:layout_height="61dp"
+        android:ems="10"
+        android:focusableInTouchMode="false"
+        android:gravity="left|top"
+        android:hint="基站0距离"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="218dp"
+        android:layout_height="71dp"
+        android:ems="10"
+        android:hint="基站1距离"
+        android:inputType="textPersonName"
+        android:focusableInTouchMode="false"
+        android:gravity="left|top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="218dp"
+        android:layout_height="76dp"
+        android:ems="10"
+        android:hint="基站2距离"
+        android:focusableInTouchMode="false"
+        android:gravity="left|top"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="390dp"
+        android:layout_height="81dp"
+        android:ems="10"
+        android:hint="标签坐标"
+        android:inputType="textPersonName"
+        android:focusableInTouchMode="false"
+        android:gravity="left|top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+
+    <Button
+        android:id="@+id/button_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="40dp"
+        android:text="定位"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+</androidx.constraintlayout.widget.ConstraintLayout>
