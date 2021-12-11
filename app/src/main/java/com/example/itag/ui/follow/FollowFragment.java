@@ -31,10 +31,7 @@ import com.example.itag.MyApp;
 import com.example.itag.R;
 import com.example.itag.databinding.FragmentFollowBinding;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+
 
 import cn.wch.ch34xuartdriver.CH34xUARTDriver;
 
@@ -69,10 +66,6 @@ public class FollowFragment extends Fragment {
     float[] values=new float[3];
     float[] rotate=new float[9];
 
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    static final String DB_URL = "jdbc:mysql://ip/tag?useSSL=false&useUnicode=true&characterEncoding=UTF-8";
-    static final String USER = "";
-    static final String PASS = "";
 
 
     public static FollowFragment newInstance() {
@@ -242,7 +235,7 @@ public class FollowFragment extends Fragment {
     }
 
     private class readThread extends Thread {
-        private Connection conn = null;
+
         public void run() {
             byte[] buffer = new byte[64];
             while (true) {
@@ -263,24 +256,7 @@ public class FollowFragment extends Fragment {
                             azh=azh+360;
                         }
 
-                        try {
-                            Class.forName(JDBC_DRIVER);
-                            conn = DriverManager.getConnection(DB_URL,USER,PASS);
-                        } catch (SQLException e) {
-                            // TODO Auto-generated catch block
-                            System.out.println(e.getMessage());
-                            textView_follow_info.setText(e.getMessage());
-                        } catch (ClassNotFoundException e) {
-                            // TODO Auto-generated catch block
-                            System.out.println(e.getMessage());
-                            textView_follow_info.setText(e.getMessage());
-                        }
-                        try {
-                            insert(dis,azh, conn);
-                        } catch (Exception e) {
-                            System.out.println(e);
-                            textView_follow_info.setText(String.valueOf(e));
-                        }
+
 
                         msg.obj = dis +"cm"+ azh+"°"+"\n";
                         handler.sendMessage(msg);
@@ -290,20 +266,7 @@ public class FollowFragment extends Fragment {
         }
     }
 
-    private static void insert(int distance, int compass, Connection conn) throws SQLException {
-        PreparedStatement pstmt;
-        String sql = "insert into tag1(distance,compass) values(?,?)";
-        pstmt=conn.prepareStatement(sql);
-        //distance=Integer.parseInt(editText2.getText().toString());
-        //compass=Integer.parseInt(editText3.getText().toString());
-        pstmt.setInt(1,distance);
-        pstmt.setInt(2,compass);
 
-        pstmt.executeUpdate();
-        System.out.println("插入成功！");
-        pstmt.close();
-        conn.close();
-    }
 
     private String toHexString(byte[] arg, int length) {
         String result = new String();
